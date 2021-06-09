@@ -1,0 +1,25 @@
+<!-- <h3>Product Info</h3>
+<table border="1">
+    <tr>
+        <th>No.</th>
+        <th>Id</th>
+        <th>Name</th>
+        <th>status</th>
+        <th>Photo</th>
+        <th>Action</th>
+    </tr>
+    <tr *ngFor="let p of products; let i = index">
+        <td>{{i + 1}}</td>
+        <td>{{p.id}}</td>
+        <td>{{p.name}}</td>
+        <td>
+            {{p.status}}
+            <span *ngIf="p.status"  style="color: rgb(55, 55, 236);">Acctive</span>
+            <span *ngIf="p.status != true" style="color: rgb(245, 0, 0);">Inacctive</span>
+        </td>
+        <td><img src="assets/images/{{p.photo}}" width="120" height="100" ></td>
+        <td>
+            <a [routerLink]="['/details', {id:p.id}]">Details</a>
+        </td>
+    </tr>
+</table> -->

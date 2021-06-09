@@ -1,0 +1,55 @@
+<h3>Product Info</h3>
+<table border="1">
+    <tr>
+        <td>Id</td>
+        <td>{{product?.id}}</td>
+    </tr>
+    <tr>
+        <td>Name</td>
+        <td>{{product?.name}}</td>
+    </tr>
+    <tr>
+        <td>Quantity</td>
+        <td>{{product?.quantity}}</td>
+    </tr>
+    <tr>
+        <td>Price</td>
+        <td>{{product?.price}}</td>
+    </tr>
+    <tr>
+        <td>Status</td>
+        <td>{{product?.status}}</td>
+    </tr>
+</table>
+
+<h3>Product List</h3>
+Min <input type="text" [(ngModel)] = "min">
+Max <input type="text" [(ngModel)] = "max">
+<input type="button" value="Search" (click)="Search()">
+
+<table border="1">
+    <tr>
+        <th>No.</th>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Status</th>
+        <th>Price</th>
+        <th>Quantity</th>
+    </tr>
+    <tr *ngFor="let p of products; let i = index">
+        <td>{{i + 1}}</td>
+        <td>{{p?.id}}</td>
+        <td>{{p?.name}}</td>
+        <td>{{p?.status}}</td>
+        <td>{{p?.price}}</td>
+        <td>{{p?.quantity}}</td>
+    </tr>
+</table>
+
+<a routerLink="/first-component"    >First Component</a>
+
+<h3>Login</h3>
+Username <input type="text" [(ngModel)] = "username">
+Password <input type="password" [(ngModel)] = "password">
+<input type="button" value="Login" (click)="Login()">
+<H5>{{login}}</H5>

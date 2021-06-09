@@ -1,0 +1,53 @@
+<h3>Ticket Info</h3>
+
+<h3>1.	Liệt kê danh sách các vé trong 1 tháng của 1 năm.</h3>
+Month <input type="text" [(ngModel)] = "searchByMonth">
+Year <input type="text" [(ngModel)] = "searchByYear">
+<input type="button" value="Search" (click)="SearchByMonth()">
+<h1></h1>
+
+<h3>2.	Liệt kê danh sách vé của 1 khách hàng.</h3>
+Nhập mã khách hàng <input type="text" [(ngModel)] = "customerId">
+<input type="button" value="Search" (click)="SearchByCustomerId()">
+<h1></h1>
+
+<h3>3.Liệt kê các vé có giá nằm trong khoảng min và max của 1 chuyến bay xác định.</h3>
+Min <input type="text" [(ngModel)] = "min">
+Max <input type="text" [(ngModel)] = "max">
+<input type="button" value="Search" (click)="Search()">
+<h1></h1>
+
+<h3>5.	Đếm và tính tổng tiền số vé được mua bởi 1 hành khách.</h3>
+Nhập mã khách hàng <input type="text" [(ngModel)] = "countAndTotalCustomerId">
+<input type="button" value="Search" (click)="CountAndTotalAmount()">
+<h6>{{result}}</h6>
+<h1></h1>
+
+<table border="1">
+    <tr>
+        <th>No.</th>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>CustomerId</th>
+        <th>FlightId</th>
+        <th>DateBooking</th>
+    </tr>
+    <tr *ngFor="let p of ticketApi; let i = index">
+        <td>{{i + 1}}</td>
+        <td>{{p?.id}}</td>
+        <td>{{p?.name}}</td>
+        <td>{{p?.price}}</td>
+        <td>{{p?.customerId}}</td>
+        <td>{{p?.flightId}}</td>
+        <td>{{p?.dateBooking}}</td>
+    </tr>
+</table>
+<h1></h1>
+<hr>
+<h3>Create ticket</h3>
+Name <input type="text" [(ngModel)] = "nameForm"><br>
+Price <input type="text" [(ngModel)] = "priceForm"><br>
+Customer Id <input type="text" [(ngModel)] = "customerIdForm"><br>
+Flight Id <input type="text" [(ngModel)] = "FlightIdForm"><br>
+<input type="button" value="Create" (click)="Create()">
